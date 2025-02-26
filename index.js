@@ -1,5 +1,6 @@
 const mongo = require("mongodb");
-const uri = "mongodb+srv://arttree63:5kfG2aY29nJqUnpg@cluster0.axodi.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const uri = process.env.MONGO_URI;
+//const uri = "mongodb+srv://arttree63:5kfG2aY29nJqUnpg@cluster0.axodi.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 const client = new mongo.MongoClient(uri);
 const taipeiTime = new Date().toLocaleString("zh-TW", { timeZone: "Asia/Taipei" });
 const moment = require("moment-timezone");
