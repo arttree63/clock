@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>打卡系統</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> <!-- 美化彈窗 -->
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <h3>我是打卡鐘</h3>
+    <div>歡迎, <%= name %></div>
+
+    <% if (role === 'admin') { %>
+        <a href="/admin">
+            <button>🔧 管理員後台</button>
+        </a>
+    <% } %>
+    
+    
+    <div class="clock-info">
+        <div>🕒 上班時間：<span id="clockInTime">尚未打卡</span></div>
+        <div>🚪 下班時間：<span id="clockOutTime">尚未打卡</span></div>
+        <div>💼 加班開始：<span id="startOvertimeTime">尚未打卡</span></div>
+        <div>🏠 加班結束：<span id="endOvertimeTime">尚未打卡</span></div>
+    </div>
+    
+    <button onclick="clockIn()">🕒 上班打卡</button>
+    <button onclick="clockOut()">🚪 下班打卡</button>
+    <button onclick="startOvertime()">💼 開始加班</button>
+    <button onclick="endOvertime()">🏠 結束加班</button>
+    
+
+    
+    <a href="/signout" class="logout">登出</a>
+    
+
+<script src="js/clock.js"></script>
+</body>
+</html>

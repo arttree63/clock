@@ -1,0 +1,192 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 50px;
+}
+h3 {
+    color: #333;
+}
+.clock-info {
+    margin: 20px 0;
+    font-size: 18px;
+}
+.clock-info div {
+    margin: 5px 0;
+}
+button {
+    display: block;
+    width: 200px;
+    padding: 10px;
+    margin: 10px auto;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    border-radius: 5px;
+}
+button:hover {
+    background-color: #0056b3;
+}
+.logout {
+    display: block;
+    margin-top: 20px;
+    color: red;
+    text-decoration: none;
+}
+
+
+
+body {
+    font-family: Arial, sans-serif;
+}
+.date-section {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+th {
+    background-color: #007BFF;
+    color: white;
+}
+.summary {
+    margin-top: 30px;
+    padding: 15px;
+    background-color: #eee;
+    border-radius: 5px;
+}
+
+/* === 全局設定 === */
+.auth {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* === 主要卡片樣式 === */
+.auth-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 400px;
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* === 頂部標題 === */
+h2 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* === 標籤分頁按鈕 === */
+.auth-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.auth-tab {
+    flex: 1;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    background: #f1f1f1;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 8px 8px 0 0;
+}
+
+.auth-tab.active {
+    background: #007BFF;
+    color: white;
+    font-weight: bold;
+}
+
+/* === 表單區塊 === */
+.auth-form-container {
+    display: block;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.hidden {
+    display: none;
+}
+
+/* === 輸入框整體組合 === */
+.auth-input-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+/* === 標籤 === */
+.auth-input-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+/* === 輸入框 === */
+.auth-form input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border 0.3s ease;
+}
+
+.auth-form input:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+/* === 按鈕 === */
+.auth-button {
+    width: 100%;
+    padding: 12px;
+    background: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.auth-button:hover {
+    background: #0056b3;
+}
+
+/* === 響應式設計 === */
+@media (max-width: 480px) {
+    .auth-card {
+        width: 90%;
+        padding: 25px;
+    }
+}

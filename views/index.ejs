@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>會員系統</title>
+    <link rel="stylesheet" href="/css/auth.css">
+</head>
+<body>
+
+    <div class="auth-container">
+        <div class="auth-card">
+            <h2>🔑 會員系統</h2>
+
+   
+
+            <!-- 註冊表單 -->
+            <div id="signup-form" class="auth-form-container">
+                <form class="auth-form" action="/signup" method="POST">
+                    <div class="auth-input-group">
+                        <label for="auth-name">你的稱呼</label>
+                        <input type="text" id="auth-name" name="name" placeholder="輸入您的名字" required>
+                    </div>
+
+                    <div class="auth-input-group">
+                        <label for="auth-username">帳號</label>
+                        <input type="username" id="auth-username" name="username" placeholder="輸入帳號" required>
+                    </div>
+
+                    <div class="auth-input-group">
+                        <label for="auth-password">輸入密碼</label>
+                        <input type="password" id="auth-password" name="password" placeholder="輸入密碼" required>
+                    </div>
+
+                    <button class="auth-button" type="submit">🚀 註冊會員</button>
+                </form>
+            </div>
+
+            <!-- 登入表單 -->
+            <div id="signin-form" class="auth-form-container hidden">
+                <form class="auth-form" action="/signin" method="POST">
+                    <div class="auth-input-group">
+                        <label for="auth-login-username">帳號</label>
+                        <input type="username" id="auth-login-username" name="username" placeholder="輸入電子郵件" required>
+                    </div>
+
+                    <div class="auth-input-group">
+                        <label for="auth-login-password">輸入密碼</label>
+                        <input type="password" id="auth-login-password" name="password" placeholder="輸入密碼" required>
+                    </div>
+
+                    <button class="auth-button" type="submit">✅ 登入會員</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/auth.js"></script>
+</body>
+</html>
