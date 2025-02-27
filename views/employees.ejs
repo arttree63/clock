@@ -102,48 +102,35 @@
 </head>
 <body>
 
-  <sl-card>
-        <!-- Skeleton 預載 -->
-        <div id="skeleton-loader" class="skeleton-wrapper">
-            <sl-skeleton effect="wave" style="height: 24px; width: 50%; margin: auto;"></sl-skeleton>
-            <sl-skeleton effect="wave" style="height: 16px; width: 80%; margin: auto;"></sl-skeleton>
-            <sl-skeleton effect="wave" style="height: 40px; width: 100%; border-radius: 8px;"></sl-skeleton>
-            <sl-skeleton effect="wave" style="height: 40px; width: 100%; border-radius: 8px;"></sl-skeleton>
-            <sl-skeleton effect="wave" style="height: 40px; width: 100%; border-radius: 8px;"></sl-skeleton>
-            <sl-skeleton effect="wave" style="height: 40px; width: 100%; border-radius: 8px;"></sl-skeleton>
+    <sl-card>
+        <h3>我是打卡鐘</h3>
+        <p>歡迎, <strong><%= name %></strong></p>
+
+        <% if (role === 'admin') { %>
+            <sl-button href="/admin">🔧 管理員後台</sl-button>
+        <% } %>
+
+        <!-- 上下班資訊 -->
+        <div class="clock-info">
+            <sl-details summary="🕒 上下班記錄">
+                <p>🕒 上班時間：<span id="clockInTime">尚未打卡</span></p>
+                <p>🚪 下班時間：<span id="clockOutTime">尚未打卡</span></p>
+            </sl-details>
+
+            <sl-details summary="💼 加班記錄">
+                <p>💼 加班開始：<span id="startOvertimeTime">尚未打卡</span></p>
+                <p>🏠 加班結束：<span id="endOvertimeTime">尚未打卡</span></p>
+            </sl-details>
         </div>
 
-        <!-- 真正內容（預設隱藏） -->
-        <div id="auth-content" class="hidden">
-            <h3>我是打卡鐘</h3>
-            <p>歡迎, <strong><%= name %></strong></p>
+        <!-- 打卡按鈕 -->
+        <sl-button onclick="clockIn()">🕒 上班打卡</sl-button>
+        <sl-button onclick="clockOut()">🚪 下班打卡</sl-button>
+        <sl-button onclick="startOvertime()">💼 開始加班</sl-button>
+        <sl-button onclick="endOvertime()">🏠 結束加班</sl-button>
 
-            <% if (role === 'admin') { %>
-                <sl-button href="/admin">🔧 管理員後台</sl-button>
-            <% } %>
-
-            <!-- 上下班資訊 -->
-            <div class="clock-info">
-                <sl-details summary="🕒 上下班記錄">
-                    <p>🕒 上班時間：<span id="clockInTime">尚未打卡</span></p>
-                    <p>🚪 下班時間：<span id="clockOutTime">尚未打卡</span></p>
-                </sl-details>
-
-                <sl-details summary="💼 加班記錄">
-                    <p>💼 加班開始：<span id="startOvertimeTime">尚未打卡</span></p>
-                    <p>🏠 加班結束：<span id="endOvertimeTime">尚未打卡</span></p>
-                </sl-details>
-            </div>
-
-            <!-- 打卡按鈕 -->
-            <sl-button onclick="clockIn()">🕒 上班打卡</sl-button>
-            <sl-button onclick="clockOut()">🚪 下班打卡</sl-button>
-            <sl-button onclick="startOvertime()">💼 開始加班</sl-button>
-            <sl-button onclick="endOvertime()">🏠 結束加班</sl-button>
-
-            <!-- 登出按鈕 -->
-            <a href="/signout" class="logout">登出</a>
-        </div>
+        <!-- 登出按鈕 -->
+        <a href="/signout" class="logout">登出</a>
     </sl-card>
 
 <script src="js/clock.js"></script>
