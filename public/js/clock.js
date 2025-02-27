@@ -115,18 +115,3 @@ return actionMap[action] || "未知動作";
 
 
 
-
-
-    window.onload = async function() {
-        try {
-            // 確保 Shoelace 的 <sl-button> 元件已定義
-            await customElements.whenDefined('sl-button');
-            
-            // Shoelace 元件已完全載入，切換內容顯示
-            document.getElementById('skeleton-loader').classList.add('hidden');
-            document.getElementById('auth-content').classList.remove('hidden');
-        } catch (error) {
-            console.error("Shoelace 加載錯誤:", error);
-        }
-    };
-
