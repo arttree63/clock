@@ -61,215 +61,108 @@ sl-divider {
 }
 
 
-        /* 確保骨架屏在載入時顯示 */
-        .auth-card {
-            width: 400px;
-            padding: 20px;
-            text-align: center;
-            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
-            border-radius: 12px;
-            background: var(--sl-color-neutral-0);
-        }
-
-        .skeleton-wrapper {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .hidden {
-            display: none;
-        }
-
-
-
 
    /* 黑白極簡風 */
-   :root {
-    --background: #F9F9F9;
-    --card-bg: #FFFFFF;
-    --text-dark: #111;
-    --text-gray: #777;
-    --button-black: #000;
-    --button-hover: #222;
-    --border-color: #E0E0E0;
-}
+        :root {
+            --background: #F9F9F9;
+            --card-bg: #FFFFFF;
+            --text-dark: #111;
+            --text-gray: #777;
+            --button-black: #000;
+            --button-hover: #222;
+            --border-color: #E0E0E0;
+        }
 
-/* 整體容器 */
-.auth {
-    width: 100%;
-    max-width: 800px;
-}
+        /* 整體容器 */
+        .auth {
+            width: 100%;
+            max-width: 800px;
+        }
 
-/* 標題 */
-h2 {
-    font-size: 22px;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 20px;
-}
+        /* 標題 */
+        h2 {
+            font-size: 22px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+        }
 
-h3 {
-    font-size: 18px;
-    margin-top: 20px;
-}
+        h3 {
+            font-size: 18px;
+            margin-top: 20px;
+        }
 
-/* Shoelace 卡片 */
-sl-card {
-    width: 100%;
-    padding: 20px;
-    background: var(--card-bg);
-    border-radius: 12px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
-    margin-bottom: 20px;
-}
+        /* Shoelace 卡片 */
+        sl-card {
+            width: 100%;
+            padding: 20px;
+            background: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
+        }
 
-/* 📌 讓表格在手機上可滾動 */
-.table-container {
-    width: 100%;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch; /* iOS 平滑滾動 */
-}
+        /* 📌 讓表格在手機上可滾動 */
+        .table-container {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch; /* iOS 平滑滾動 */
+        }
 
-/* 表格美化 */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-    min-width: 600px; /* 讓內容不會壓縮變形 */
-}
+        /* 表格美化 */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            min-width: 600px; /* 讓內容不會壓縮變形 */
+        }
 
-th, td {
-    padding: 12px;
-    text-align: left;
-    border-bottom: 1px solid var(--border-color);
-    white-space: nowrap; /* 避免換行 */
-}
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+            white-space: nowrap; /* 避免換行 */
+        }
 
-th {
-    background: var(--background);
-    font-weight: bold;
-}
+        th {
+            background: var(--background);
+            font-weight: bold;
+        }
 
-/* 按鈕樣式 */
-.black-btn {
-background: var(--button-black);
-color: white;
-padding: 9px 0;
-margin-bottom: 18px;
-font-size: 14px;
-width: auto;
-border-radius: 8px;
-transition: 0.3s;
-text-align: center;
-display: inline-block;
-text-decoration: none;
-}
-
-.black-btn:hover {
-    background: var(--button-hover);
-}
-
-/* 📱 手機版調整 */
-@media screen and (max-width: 768px) {
-    h2 {
-        font-size: 18px;
+        /* 按鈕樣式 */
+        .black-btn {
+        background: var(--button-black);
+        color: white;
+        padding: 9px 0;
+        margin-bottom: 18px;
+        font-size: 14px;
+        width: 100%;
+        border-radius: 8px;
+        transition: 0.3s;
+        text-align: center;
+        display: inline-block;
+        text-decoration: none;
     }
 
-    h3 {
-        font-size: 16px;
-    }
+        .black-btn:hover {
+            background: var(--button-hover);
+        }
 
-    sl-card {
-        padding: 15px;
-    }
+        /* 📱 手機版調整 */
+        @media screen and (max-width: 768px) {
+            h2 {
+                font-size: 18px;
+            }
 
-    .black-btn {
-        width: 100%; /* 在手機上按鈕變全寬 */
-    }
-}
+            h3 {
+                font-size: 16px;
+            }
 
+            sl-card {
+                padding: 15px;
+            }
 
- /* 全局樣式：黑白灰極簡 */
- :root {
-    --background: #F9F9F9;
-    --card-bg: #FFFFFF;
-    --text-dark: #111;
-    --text-gray: #777;
-    --button-black: #000;
-    --button-hover: #222;
-    --logout-red: #FF3B30;
-}
-
-/* 背景色 */
-body {
-    background: var(--background);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    font-family: 'Arial', sans-serif;
-    color: var(--text-dark);
-}
-
-/* 卡片風格（去除邊框 + 微陰影） */
-sl-card {
-    width: 360px;
-    padding: 20px;
-    background: var(--card-bg);
-    border-radius: 12px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
-}
-
-/* 標題樣式 */
-h3 {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-p {
-    font-size: 14px;
-    color: var(--text-gray);
-}
-
-/* Shoelace 詳細資訊（去除邊框） */
-sl-details {
-    background: var(--card-bg);
-    color: var(--text-dark);
-    border-radius: 8px;
-    padding: 8px;
-    margin-top: 10px;
-    box-shadow: none;
-}
-
-/* 按鈕樣式（去掉黑框，使用柔和風格） */
-sl-button {
-    width: 100%;
-    font-size: 14px;
-    margin: 5px 0;
-    border-radius: 8px;
-    background: var(--button-black);
-    color: white;
-    transition: 0.3s;
-}
-
-sl-button:hover {
-    background: var(--button-hover);
-}
-
-/* 登出按鈕 */
-.logout {
-    display: block;
-    margin-top: 15px;
-    color: var(--logout-red);
-    text-decoration: none;
-    font-weight: bold;
-    text-align: center;
-    transition: 0.3s;
-}
-
-.logout:hover {
-    color: #FF6150;
-}
+            .black-btn {
+                width: 100%; /* 在手機上按鈕變全寬 */
+            }
+        }
