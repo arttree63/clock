@@ -5,56 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>打卡鐘登入</title>
     <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Shoelace 2.20.0 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.0/cdn/themes/light.css">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.0/cdn/shoelace.js"></script>
+
 </head>
 <body>
 
-    <div class="auth-container">
-        <div class="auth-card">
-            <h2>🔑 打卡鐘登入</h2>
+    <sl-card class="auth-card">
+        <h2>🔑 打卡鐘系統</h2>
+        <sl-divider></sl-divider>
 
-   
-
-            <!-- 註冊表單 -->
-            <div id="signup-form" class="auth-form-container">
-                <form class="auth-form" action="/signup" method="POST">
-                    <div class="auth-input-group">
-                        <label for="auth-name">你的稱呼</label>
-                        <input type="text" id="auth-name" name="name" placeholder="輸入您的名字" required>
-                    </div>
-
-                    <div class="auth-input-group">
-                        <label for="auth-username">帳號</label>
-                        <input type="username" id="auth-username" name="username" placeholder="輸入帳號" required>
-                    </div>
-
-                    <div class="auth-input-group">
-                        <label for="auth-password">輸入密碼</label>
-                        <input type="password" id="auth-password" name="password" placeholder="輸入密碼" required>
-                    </div>
-
-                    <button class="auth-button" type="submit">🚀 註冊會員</button>
-                </form>
-            </div>
+        <!-- 使用 Shoelace 的 Tabs，讓登入 / 註冊可以切換 -->
+        <sl-tab-group placement="top">
+            <sl-tab slot="nav" panel="signin">登入</sl-tab>
+            <sl-tab slot="nav" panel="signup">註冊</sl-tab>
 
             <!-- 登入表單 -->
-            <div id="signin-form" class="auth-form-container ">
+            <sl-tab-panel name="signin">
                 <form class="auth-form" action="/signin" method="POST">
-                    <div class="auth-input-group">
-                        <label for="auth-login-username">帳號</label>
-                        <input type="username" id="auth-login-username" name="username" placeholder="輸入電子郵件" required>
-                    </div>
-
-                    <div class="auth-input-group">
-                        <label for="auth-login-password">輸入密碼</label>
-                        <input type="password" id="auth-login-password" name="password" placeholder="輸入密碼" required>
-                    </div>
-
-                    <button class="auth-button" type="submit">✅ 登入會員</button>
+                    <sl-input label="帳號" name="username" placeholder="輸入帳號" required></sl-input>
+                    <sl-input type="password" label="輸入密碼" name="password" placeholder="輸入密碼" required></sl-input>
+                    <sl-button variant="success" class="auth-button" type="submit">✅ 登入會員</sl-button>
                 </form>
-            </div>
-        </div>
-    </div>
+            </sl-tab-panel>
 
-   
+            <!-- 註冊表單 -->
+            <sl-tab-panel name="signup">
+                <form class="auth-form" action="/signup" method="POST">
+                    <sl-input label="你的稱呼" name="name" placeholder="輸入您的名字" required></sl-input>
+                    <sl-input label="帳號" name="username" placeholder="輸入帳號" required></sl-input>
+                    <sl-input type="password" label="輸入密碼" name="password" placeholder="輸入密碼" required></sl-input>
+                    <sl-button variant="primary" class="auth-button" type="submit">🚀 註冊會員</sl-button>
+                </form>
+            </sl-tab-panel>
+        </sl-tab-group>
+    </sl-card>
+
 </body>
 </html>

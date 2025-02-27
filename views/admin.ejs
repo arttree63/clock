@@ -5,58 +5,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>管理員後台</title>
 
-      <link rel="stylesheet" href="css/styles.css">
+    <!-- Shoelace 2.20.0 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.0/cdn/themes/light.css">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.0/cdn/shoelace.js"></script>
+
+    <link rel="stylesheet" href="css/styles.css">
+
 </head>
 <body>
+
 <div class="auth">
     <h2>🔧 管理員後台 - 員工打卡記錄</h2>
 
     <% for (const date in groupedRecords) { %>
-        <div class="date-section">
+        <sl-card>
             <h3>📅 <%= date %></h3>
-            <table>
-                <tr>
-                    <th>員工名稱</th>
-                    <th>上班時間</th>
-                    <th>下班時間</th>
-                    <th>加班開始</th>
-                    <th>加班結束</th>
-                    <th>總工時</th>
-                </tr>
-                <% groupedRecords[date].forEach(employee => { %>
-                <tr>
-                    <td><%= employee.username %></td>
-                    <td><%= employee.clock_in %></td>
-                    <td><%= employee.clock_out %></td>
-                    <td><%= employee.overtime_start %></td>
-                    <td><%= employee.overtime_end %></td>
-                    <td><%= employee.total_work_hours %> 小時</td>
-                </tr>
-                <% }); %>
-            </table>
-        </div>
+            <div class="table-container">
+                <table>
+                    <tr>
+                        <th>員工名稱</th>
+                        <th>上班時間</th>
+                        <th>下班時間</th>
+                        <th>加班開始</th>
+                        <th>加班結束</th>
+                        <th>總工時</th>
+                    </tr>
+                    <% groupedRecords[date].forEach(employee => { %>
+                    <tr>
+                        <td><%= employee.username %></td>
+                        <td><%= employee.clock_in %></td>
+                        <td><%= employee.clock_out %></td>
+                        <td><%= employee.overtime_start %></td>
+                        <td><%= employee.overtime_end %></td>
+                        <td><%= employee.total_work_hours %> 小時</td>
+                    </tr>
+                    <% }); %>
+                </table>
+            </div>
+        </sl-card>
     <% } %>
 
     <!-- 📌 當月統計報告 -->
-    <div class="summary">
+    <sl-card>
         <h3>📊 本月工時統計</h3>
-        <table>
-            <tr>
-                <th>員工名稱</th>
-                <th>當月總工作時數</th>
-                <th>當月總加班時數</th>
-            </tr>
-            <% for (const username in monthlyStats) { %>
-            <tr>
-                <td><%= username %></td>
-                <td><%= monthlyStats[username].total_work %> 小時</td>
-                <td><%= monthlyStats[username].total_overtime %> 小時</td>
-            </tr>
-            <% } %>
-        </table>
-    </div>
+        <div class="table-container">
+            <table>
+                <tr>
+                    <th>員工名稱</th>
+                    <th>當月總工作時數</th>
+                    <th>當月總加班時數</th>
+                </tr>
+                <% for (const username in monthlyStats) { %>
+                <tr>
+                    <td><%= username %></td>
+                    <td><%= monthlyStats[username].total_work %> 小時</td>
+                    <td><%= monthlyStats[username].total_overtime %> 小時</td>
+                </tr>
+                <% } %>
+            </table>
+        </div>
+    </sl-card>
 
-    <a href="/employees"><button>回員工頁面</button></a>
+    <a href="/employees" class="black-btn">🔙 回員工頁面</a>
 </div>
+
 </body>
 </html>
