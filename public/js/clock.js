@@ -109,3 +109,29 @@ const actionMap = {
 };
 return actionMap[action] || "未知動作";
 }
+
+
+
+
+
+
+
+
+
+
+// 真正監聽 Shoelace 載入事件，確保載入完成後再顯示內容
+document.addEventListener("DOMContentLoaded", function() {
+    // 檢查 Shoelace 是否已完全載入
+    const shoelaceLoaded = () => {
+        return document.querySelector('sl-button') !== null;
+    };
+
+    // 監聽 DOM 完全載入
+    const checkShoelaceLoad = setInterval(() => {
+        if (shoelaceLoaded()) {
+            clearInterval(checkShoelaceLoad);
+            document.getElementById('skeleton-loader').classList.add('hidden');
+            document.getElementById('auth-content').classList.remove('hidden');
+        }
+    }, 100); // 每 100ms 檢查一次
+});

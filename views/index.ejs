@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.0/cdn/themes/light.css">
     <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.0/cdn/shoelace.js"></script>
 
+
 </head>
 <body>
 
@@ -17,30 +18,41 @@
         <h2>🔑 打卡鐘系統</h2>
         <sl-divider></sl-divider>
 
-        <!-- 使用 Shoelace 的 Tabs，讓登入 / 註冊可以切換 -->
-        <sl-tab-group placement="top">
-            <sl-tab slot="nav" panel="signin">登入</sl-tab>
-            <sl-tab slot="nav" panel="signup">註冊</sl-tab>
+        <!-- Skeleton 預載效果 -->
+        <div id="skeleton-loader" class="skeleton-wrapper">
+            <sl-skeleton effect="wave" style="height: 40px; width: 100%; border-radius: 8px;"></sl-skeleton>
+            <sl-skeleton effect="wave" style="height: 40px; width: 100%; border-radius: 8px;"></sl-skeleton>
+            <sl-skeleton effect="wave" style="height: 40px; width: 100%; border-radius: 8px;"></sl-skeleton>
+            <sl-skeleton effect="wave" style="height: 40px; width: 100%; border-radius: 8px;"></sl-skeleton>
+            <sl-skeleton effect="wave" style="height: 50px; width: 100%; border-radius: 8px;"></sl-skeleton>
+        </div>
 
-            <!-- 登入表單 -->
-            <sl-tab-panel name="signin">
-                <form class="auth-form" action="/signin" method="POST">
-                    <sl-input label="帳號" name="username" placeholder="輸入帳號" required></sl-input>
-                    <sl-input type="password" label="輸入密碼" name="password" placeholder="輸入密碼" required></sl-input>
-                    <sl-button variant="success" class="auth-button" type="submit">✅ 登入會員</sl-button>
-                </form>
-            </sl-tab-panel>
+        <!-- 真正的內容（預設隱藏） -->
+        <div id="auth-content" class="hidden">
+            <sl-tab-group placement="top">
+                <sl-tab slot="nav" panel="signin">登入</sl-tab>
+                <sl-tab slot="nav" panel="signup">註冊</sl-tab>
 
-            <!-- 註冊表單 -->
-            <sl-tab-panel name="signup">
-                <form class="auth-form" action="/signup" method="POST">
-                    <sl-input label="你的稱呼" name="name" placeholder="輸入您的名字" required></sl-input>
-                    <sl-input label="帳號" name="username" placeholder="輸入帳號" required></sl-input>
-                    <sl-input type="password" label="輸入密碼" name="password" placeholder="輸入密碼" required></sl-input>
-                    <sl-button variant="primary" class="auth-button" type="submit">🚀 註冊會員</sl-button>
-                </form>
-            </sl-tab-panel>
-        </sl-tab-group>
+                <!-- 登入表單 -->
+                <sl-tab-panel name="signin">
+                    <form class="auth-form" action="/signin" method="POST">
+                        <sl-input label="帳號" name="username" placeholder="輸入帳號" required></sl-input>
+                        <sl-input type="password" label="輸入密碼" name="password" placeholder="輸入密碼" required></sl-input>
+                        <sl-button variant="success" class="auth-button" type="submit">✅ 登入會員</sl-button>
+                    </form>
+                </sl-tab-panel>
+
+                <!-- 註冊表單 -->
+                <sl-tab-panel name="signup">
+                    <form class="auth-form" action="/signup" method="POST">
+                        <sl-input label="你的稱呼" name="name" placeholder="輸入您的名字" required></sl-input>
+                        <sl-input label="帳號" name="username" placeholder="輸入帳號" required></sl-input>
+                        <sl-input type="password" label="輸入密碼" name="password" placeholder="輸入密碼" required></sl-input>
+                        <sl-button variant="primary" class="auth-button" type="submit">🚀 註冊會員</sl-button>
+                    </form>
+                </sl-tab-panel>
+            </sl-tab-group>
+        </div>
     </sl-card>
 
 </body>

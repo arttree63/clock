@@ -61,6 +61,28 @@ sl-divider {
 }
 
 
+        /* 確保骨架屏在載入時顯示 */
+        .auth-card {
+            width: 400px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            background: var(--sl-color-neutral-0);
+        }
+
+        .skeleton-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+
+
 
    /* 黑白極簡風 */
    :root {
@@ -165,4 +187,89 @@ text-decoration: none;
     .black-btn {
         width: 100%; /* 在手機上按鈕變全寬 */
     }
+}
+
+
+ /* 全局樣式：黑白灰極簡 */
+ :root {
+    --background: #F9F9F9;
+    --card-bg: #FFFFFF;
+    --text-dark: #111;
+    --text-gray: #777;
+    --button-black: #000;
+    --button-hover: #222;
+    --logout-red: #FF3B30;
+}
+
+/* 背景色 */
+body {
+    background: var(--background);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: 'Arial', sans-serif;
+    color: var(--text-dark);
+}
+
+/* 卡片風格（去除邊框 + 微陰影） */
+sl-card {
+    width: 360px;
+    padding: 20px;
+    background: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* 標題樣式 */
+h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 14px;
+    color: var(--text-gray);
+}
+
+/* Shoelace 詳細資訊（去除邊框） */
+sl-details {
+    background: var(--card-bg);
+    color: var(--text-dark);
+    border-radius: 8px;
+    padding: 8px;
+    margin-top: 10px;
+    box-shadow: none;
+}
+
+/* 按鈕樣式（去掉黑框，使用柔和風格） */
+sl-button {
+    width: 100%;
+    font-size: 14px;
+    margin: 5px 0;
+    border-radius: 8px;
+    background: var(--button-black);
+    color: white;
+    transition: 0.3s;
+}
+
+sl-button:hover {
+    background: var(--button-hover);
+}
+
+/* 登出按鈕 */
+.logout {
+    display: block;
+    margin-top: 15px;
+    color: var(--logout-red);
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.logout:hover {
+    color: #FF6150;
 }
