@@ -117,21 +117,16 @@ return actionMap[action] || "未知動作";
 
 
 
-
-
-// 真正監聽 Shoelace 載入事件，確保載入完成後再顯示內容
-document.addEventListener("DOMContentLoaded", function() {
-    // 檢查 Shoelace 是否已完全載入
-    const shoelaceLoaded = () => {
-        return document.querySelector('sl-button') !== null;
-    };
-
-    // 監聽 DOM 完全載入
-    const checkShoelaceLoad = setInterval(() => {
-        if (shoelaceLoaded()) {
-            clearInterval(checkShoelaceLoad);
+    window.onload = async function() {
+        try {
+            // 確保 Shoelace 的 <sl-button> 元件已定義
+            await customElements.whenDefined('sl-button');
+            
+            // Shoelace 元件已完全載入，切換內容顯示
             document.getElementById('skeleton-loader').classList.add('hidden');
             document.getElementById('auth-content').classList.remove('hidden');
+        } catch (error) {
+            console.error("Shoelace 加載錯誤:", error);
         }
-    }, 100); // 每 100ms 檢查一次
-});
+    };
+
